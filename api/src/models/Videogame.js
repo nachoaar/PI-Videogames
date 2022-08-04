@@ -16,7 +16,7 @@ module.exports = (sequelize) => {
       unique: true
     },
     description: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false
     },
     released: {
@@ -40,6 +40,6 @@ module.exports = (sequelize) => {
       defaultValue: true
     }
   },{
-    timestamps: true
+    timestamps: false
   });
 };
