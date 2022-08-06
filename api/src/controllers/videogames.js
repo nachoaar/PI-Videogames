@@ -65,12 +65,12 @@ async function getVideogames (req, res, next) {
 async function postVideogame (req, res, next) {
     try {
         // POST -> POST /videogames <-
-        const {name, description, released, rating, platforms, background_image, createInDb, genres} = req.body;
-        if (name && description && platforms) {
-            let videogame = await Videogame.create({name, description, released, rating, platforms, background_image, createInDb});
-            let genre = await Genre.findAll({
-                where: { name: genres }
-            });
+        const {name, description, released, rating, platforms, background_image, genres} = req.body;    
+        let genre = await Genre.findAll({
+            where: { name: genres }
+        });
+        if (name && description && platforms && genres && genre.length > 0) {
+            let videogame = await Videogame.create({name, description, released, rating, platforms, background_image});
             videogame.addGenre(genre);
             res.send(videogame);
         } else {
