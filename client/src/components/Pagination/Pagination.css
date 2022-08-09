@@ -1,19 +1,38 @@
-.pagination {
-    width: 80%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    margin-bottom: 2rem;
-    margin-top: 1rem;
-    align-items: center;
+.pagination ul {
+    display: flex;
+    background-color: #151515;
+    /* padding: 0.6rem; */
+    border-radius: 1.5rem;
+    margin: 1rem;
 }
 
-.pagination nav ul {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 2rem;
-}
-
-.pagination button {
+.pagination ul li {
+    list-style: none;
     width: 2rem;
     height: 2rem;
+    line-height: 2rem;
+    border-radius: 50%;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.pagination ul li.page {
+    background-color: blue;
+}
+
+.pagination ul li.page:hover {
+    background-color: white;
+}
+
+.pagination ul li button.btn {
+    background-color: #151515;
+    border: none;
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.pagination ul li button.btn[disabled] {
+    opacity: 0.6;
+    cursor: not-allowed;
 }

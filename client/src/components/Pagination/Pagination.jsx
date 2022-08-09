@@ -23,19 +23,17 @@ export default function Pagination ({page, setPage, max}) {
 
     return (
         <div className="pagination">
-            <button disabled={page === 1 || page < 1} onClick={prevPage}>Atrás</button>
-            <nav>
-                <ul>
-                    {numbers?.map((p) => {
-                        return (
-                            <li key={p}>
-                                <a href="#/" onClick={() => setPage(p)}>{p}</a>
-                            </li>
-                        )
-                    })}
-                </ul>
-            </nav>
-            <button disabled={page === max || page > max} onClick={nextPage}>Siguiente</button>
+            <ul>
+                <li><button className="btn" disabled={page === 1 || page < 1} onClick={prevPage}>&laquo;</button></li>
+                {numbers?.map((p) => {
+                    return (
+                        <li className="page" key={p}>
+                            <span onClick={() => setPage(p)}>{p}</span>
+                        </li>
+                    )
+                })}
+                <li><button className="btn" disabled={page === max || page > max} onClick={nextPage}>&raquo;</button></li>
+            </ul>
         </div>
     )
 }
