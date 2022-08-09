@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './Pagination.css';
 
 export default function Pagination ({page, setPage, max}) {
 
@@ -21,14 +22,14 @@ export default function Pagination ({page, setPage, max}) {
     }
 
     return (
-        <div>
+        <div className="pagination">
             <button disabled={page === 1 || page < 1} onClick={prevPage}>Atrás</button>
             <nav>
                 <ul>
                     {numbers?.map((p) => {
                         return (
                             <li key={p}>
-                                <a onClick={() => setPage(p)}>{p}</a>
+                                <a href="#/" onClick={() => setPage(p)}>{p}</a>
                             </li>
                         )
                     })}

@@ -1,11 +1,12 @@
 import React from 'react';
+import './Card.css';
 
 export default function Card (props) {
     return (
-        <div>
-            <img src={props.background_image} alt='not found'/>
-            <p>{props.genres.join(", ")}</p>          
+        <div className='card'>
+            <img className='image' src={props.background_image} alt='not found'/>
             <h3>{props.name}</h3>
+            <p>{props.genres.join(", ")}</p>          
         </div>
     )
 }

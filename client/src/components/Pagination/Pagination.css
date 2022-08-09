@@ -1,0 +1,19 @@
+.pagination {
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+    align-items: center;
+}
+
+.pagination nav ul {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2rem;
+}
+
+.pagination button {
+    width: 2rem;
+    height: 2rem;
+}
