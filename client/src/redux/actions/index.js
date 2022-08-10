@@ -26,3 +26,17 @@ export const filterByGenres = (payload) => {
         payload: payload
     }
 }
+
+export const filterByCreation = (payload) => {
+    return {
+        type: 'FILTER_CREATED',
+        payload: payload
+    }
+}
+
+export const filterByAlphabetic = (payload) => {
+    return {
+        type: 'FILTER_ALPHABETIC',
+        payload: payload
+    }
+}
