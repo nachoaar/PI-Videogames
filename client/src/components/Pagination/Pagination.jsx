@@ -9,6 +9,13 @@ export default function Pagination ({page, setPage, max}) {
         numbers.push(i);
     }
 
+    console.log("numero de paginado: ", page);
+    console.log(numbers.length);
+
+    // if(page > numbers.length) {
+    //     setPage(1);
+    // }
+
     const [input, setInput] = useState(1);
 
     const nextPage = () => {
@@ -23,17 +30,17 @@ export default function Pagination ({page, setPage, max}) {
 
     return (
         <div className="pagination">
+            <button className="btn" disabled={page === 1 || page < 1} onClick={prevPage}>&laquo;</button>
             <ul>
-                <li><button className="btn" disabled={page === 1 || page < 1} onClick={prevPage}>&laquo;</button></li>
                 {numbers?.map((p) => {
                     return (
-                        <li className="page" key={p}>
-                            <span onClick={() => setPage(p)}>{p}</span>
+                        <li className="page" onClick={() => setPage(p)} key={p}>
+                            <span>{p}</span>
                         </li>
                     )
                 })}
-                <li><button className="btn" disabled={page === max || page > max} onClick={nextPage}>&raquo;</button></li>
             </ul>
+            <button className="btn" disabled={page === max || page > max} onClick={nextPage}>&raquo;</button>
         </div>
     )
 }

@@ -19,3 +19,10 @@ export const getGenres = () => {
         })
     }
 };
+
+export const filterByGenres = (payload) => {
+    return {
+        type: 'FILTER_GENRES',
+        payload: payload
+    }
+}

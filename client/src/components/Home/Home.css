@@ -4,18 +4,27 @@
 }
 
 .container {
-    width: 90%;
+    width: 95%;
     margin: auto;
     background-color: #1e1e1e;
     border-radius: 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 1rem;
+}
+
+.gridmain {
+    display: grid;
+    grid-template-columns: 20% 1fr;
+    gap: 1rem;
+}
+
+.gridmain .filter {
+    background-color: #151515;
 }
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
 }

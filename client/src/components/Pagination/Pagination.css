@@ -1,38 +1,44 @@
+.pagination {
+    display: flex;
+    margin: 1rem;
+    justify-content: center;
+}
 .pagination ul {
     display: flex;
-    background-color: #151515;
-    /* padding: 0.6rem; */
-    border-radius: 1.5rem;
-    margin: 1rem;
 }
 
 .pagination ul li {
     list-style: none;
-    width: 2rem;
-    height: 2rem;
-    line-height: 2rem;
-    border-radius: 50%;
-    font-weight: 500;
     cursor: pointer;
+    margin: 0 1rem 0 1rem;
 }
 
 .pagination ul li.page {
-    background-color: blue;
+    width: 2rem;
+    height: 2rem;
+    font-weight: 500;
+    line-height: 2rem;
+    border-radius: 50%;
 }
 
 .pagination ul li.page:hover {
-    background-color: white;
+    background-color: #151515;
 }
 
-.pagination ul li button.btn {
-    background-color: #151515;
+.btn {
+    background-color: #151515; /* Green */
+    width: 2rem;
+    height: 2rem;
     border: none;
     color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
     border-radius: 50%;
     cursor: pointer;
 }
 
-.pagination ul li button.btn[disabled] {
+.btn[disabled] {
     opacity: 0.6;
     cursor: not-allowed;
 }

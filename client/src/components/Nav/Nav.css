@@ -1,0 +1,10 @@
+.navbar {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 3rem;
+    line-height: 3rem;
+    margin: 1rem;
+    background-color: #1e1e1e;
+    border-radius: 3rem;
+}
+
