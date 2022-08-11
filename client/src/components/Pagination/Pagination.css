@@ -25,6 +25,10 @@
     background-color: #151515;
 }
 
+.pagination ul li.active {
+    background-color: #151515;
+}
+
 .btn {
     background-color: #151515; /* Green */
     width: 2rem;

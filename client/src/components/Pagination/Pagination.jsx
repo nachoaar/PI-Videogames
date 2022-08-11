@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import './Pagination.css';
+import "./Pagination.css"
 
 export default function Pagination ({page, setPage, max}) {
 
@@ -30,7 +30,7 @@ export default function Pagination ({page, setPage, max}) {
             <ul>
                 {numbers?.map((p) => {
                     return (
-                        <li className="page" onClick={() => setPage(p)} key={p}>
+                        <li className={page === p ? "page active" : "page"} onClick={() => setPage(p)} key={p}>
                             <span>{p}</span>
                         </li>
                     )

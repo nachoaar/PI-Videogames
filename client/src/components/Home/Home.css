@@ -3,30 +3,41 @@
     padding: 0;
 }
 
-.container {
-    width: 95%;
+.main {
+    width: 90%;
     margin: auto;
     background-color: #1e1e1e;
-    border-radius: 2rem;
     display: grid;
-    grid-template-columns: 1fr;
-    padding: 1rem;
+    gap: 1rem;
+}
+
+.section {
+    display: grid;
+    grid-template-columns: 15% 1fr;
+}
+
+aside {
+    background-color: #181818;
+}
+
+.sticky {
+    position: sticky;
+    top: 1rem;
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    gap: 1rem;
 }
 
 .gridmain {
     display: grid;
-    grid-template-columns: 20% 1fr;
+    grid-template-columns: 1fr;
     gap: 1rem;
-}
-
-.gridmain .filter {
-    background-color: #151515;
 }
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
 }
 
 .lupa {

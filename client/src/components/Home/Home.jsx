@@ -7,6 +7,7 @@ import Card from '../Card/Card';
 import Pagination from '../Pagination/Pagination.jsx';
 import Filtered from '../Filtered/Filtered.jsx';
 import './Home.css';
+import SearchBar from '../SearchBar/SearchBar.jsx';
 
 export default function Home () {
     
@@ -27,29 +28,31 @@ export default function Home () {
     const max = Math.ceil(videogames.length / perPage);
     
     return (
-        <div>
-            <Nav
-                setPage={setPage}
-            />
-            <div className='container'>
-                <h1>Video Games</h1>
-                <h2>The most wanted</h2>
-                {/* <span className='lupa'>
-                <svg xmlns="http://www.w3.org/2000/svg" class="svg css-uwwqev" viewBox="0 0 21 20" preserveAspectRatio="xMidYMid meet"><g transform="scale(1 -1) rotate(-45 -11.93502884 -2)" stroke="currentColor" stroke-width="1.65" fill="none" fill-rule="evenodd"><circle cx="7.70710678" cy="7.70710678" r="7"></circle><path d="M15.2071068 8.62132034h5.6923881" stroke-linecap="square"></path></g></svg>
-                </span> */}
-                <Pagination
-                    page={page} 
-                    setPage={setPage} 
-                    max={max}
-                />
-                <div className='gridmain'>
-                    <div className='filter'>
+        <main className='main'>
+            <section className='section'>
+                <aside>
+                    <div className='sticky'>
+                        <h1>Logo</h1>
+                        <h2>The most wanted</h2>
+                        <SearchBar
+                            setPage={setPage}
+                        />
                         <Filtered
                             setPage={setPage}
                             setOrder={setOrder}
                             order={order}
                         />
                     </div>
+                </aside>
+                <article>
+                    <header>
+                        <Nav/>
+                    </header>
+                    <Pagination
+                        page={page} 
+                        setPage={setPage} 
+                        max={max}
+                    />
                     <div className='grid'>
                         {videogames?.slice(
                             (page - 1) * perPage,
@@ -67,8 +70,11 @@ export default function Home () {
                             )
                         })}
                     </div>
-                </div>
-            </div>
-        </div>
+                </article>
+            </section>
+            <footer>
+                <p>Fin.</p>
+            </footer>
+        </main>
     )
 }

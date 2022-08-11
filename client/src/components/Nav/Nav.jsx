@@ -1,26 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Nav.css'
-import SearchBar from '../SearchBar/SearchBar';
 
-export default function Nav ({setPage}) {
+export default function Nav () {
     return (
-        <div className='navbar'>
-            <div className='logo'>
-                <Link to='/'>
-                    <p>Logo</p>
+        <nav className='navbar'>
+            <div className='navigation'>
+                    <Link to='/'>
+                        <p>Home</p>
+                    </Link>
+                    <Link to='/videogames/create'>
+                        <p>Create</p>
+                    </Link>
+            </div>
+            <div className='social'>
+                <Link to='/Github'>
+                    <p>Github</p>
                 </Link>
             </div>
-            <div className='search'>
-                <SearchBar
-                    setPage={setPage}
-                />
-            </div>
-            <div className='home'>
-                <Link to='/videogames'>
-                    <p>Home</p>
-                </Link>
-            </div>
-        </div>
+        </nav>
     )
 }

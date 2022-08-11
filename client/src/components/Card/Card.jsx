@@ -1,5 +1,6 @@
 import React from 'react';
 import './Card.css';
+import { Link } from 'react-router-dom';
 
 export default function Card (props) {
     return (
@@ -9,7 +10,10 @@ export default function Card (props) {
             </div>
             <h3>{props.name}</h3>
             <p>{props.genres.join(", ")}</p>
-            <p>{props.rating}</p>          
+            <p>{props.rating}</p>
+            <Link to='/videogame'>
+                <p>Ver más.</p>
+            </Link>  
         </div>
     )
 }
