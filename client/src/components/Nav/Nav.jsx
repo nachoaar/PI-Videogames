@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './Nav.css'
 import SearchBar from '../SearchBar/SearchBar';
 
-export default function Nav () {
+export default function Nav ({setPage}) {
     return (
         <div className='navbar'>
             <div className='logo'>
@@ -12,7 +12,9 @@ export default function Nav () {
                 </Link>
             </div>
             <div className='search'>
-                <SearchBar/>
+                <SearchBar
+                    setPage={setPage}
+                />
             </div>
             <div className='home'>
                 <Link to='/videogames'>

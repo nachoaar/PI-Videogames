@@ -11,7 +11,8 @@ import './Home.css';
 export default function Home () {
     
     const [page, setPage] = useState(1);
-    const [perPage] = useState(15)
+    const [perPage] = useState(15);
+    const [order, setOrder] = useState("");
     
     const dispatch = useDispatch();
     useEffect(() => {
@@ -21,14 +22,15 @@ export default function Home () {
 
     console.log(page);
 
-    const videogames = useSelector((state) => state.videogames);
+    const videogames = useSelector((state) => state.filtered);
     
     const max = Math.ceil(videogames.length / perPage);
-
     
     return (
         <div>
-            <Nav/>
+            <Nav
+                setPage={setPage}
+            />
             <div className='container'>
                 <h1>Video Games</h1>
                 <h2>The most wanted</h2>
@@ -44,6 +46,8 @@ export default function Home () {
                     <div className='filter'>
                         <Filtered
                             setPage={setPage}
+                            setOrder={setOrder}
+                            order={order}
                         />
                     </div>
                     <div className='grid'>

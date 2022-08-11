@@ -1,7 +1,9 @@
 const initialState = {
     videogames: [],
+    backup: [],
+    filtered: [],
+    details: {},
     genres: [],
-    filterVideogames: [],
 }
 
 export default function rootReducer (state = initialState, action) {
@@ -10,50 +12,55 @@ export default function rootReducer (state = initialState, action) {
             return {
                 ...state,
                 videogames: action.payload,
-                filterVideogames: action.payload,
+                backup: action.payload,
+                filtered: action.payload
             }
         case 'GET_GENRES':
             return {
                 ...state,
                 genres: action.payload
             }
-        case 'FILTER_GENRES':
-            const genres = state.filterVideogames;
-            const genreFilter = action.payload === 'all' ? genres : genres.filter((v) => v.genres.find((g) => g === action.payload));
-            return {
-                ...state,
-                videogames: genreFilter
+        case 'GET_BY_NAME':
+            if (action.value === 'name') {
+                return {...state, backup: action.payload, filtered: action.payload}
             }
-        case 'FILTER_CREATED':
-            let creation = state.filterVideogames;
-            const creationFilter = action.payload === 'database' ? creation.filter((v) => v.createdInDb) : creation.filter((v) => !v.createdInDb);
-            return {
-                ...state,
-                videogames: action.payload === 'all' ? creation : creationFilter
+            else {
+                return {...state, backup: state.videogames, filtered: state.videogames}
             }
-        case 'FILTER_ALPHABETIC':
-            const alphabetic = state.filterVideogames;
-            let alphabeticFilter = action.payload === 'asc' ? alphabetic.sort((a, b) => {
-                if (a.name > b.name) {
-                    return 1;
-                }
-                if (b.name > a.name) {
-                    return -1;
-                }
-                return 0;
-            }) : alphabetic.sort((a, b) => {
-                if (a.name > b.name) {
-                    return -1;
-                }
-                if (b.name > a.name) {
-                    return 1;
-                }
-                    return 0;
-            });
-            console.log(alphabeticFilter);
-            return {
-                ...state,
-                videogames: action.payload === 'clear' ? alphabetic : alphabeticFilter
+        case 'FILTER_BY':
+            if (action.payload === 'default') {
+                return {...state, filtered: state.backup}
+            }
+            if (action.payload === 'database') {
+                return {...state, filtered: state.backup.filter((v) => v.createdInDb)}
+            }
+            if (action.payload === 'api') {
+                return {...state, filtered: state.backup.filter((v) => !v.createdInDb)}
+            }
+            else {
+                return {...state, filtered: state.backup.filter((v) => v.genres.find((g) => g === action.payload))}
+            }
+        case 'ORDER_BY':
+            if (action.payload === 'az') {
+                return {...state, filtered: [...state.filtered].sort((a, b) => {
+                    if (a.name.toLowerCase() > b.name.toLowerCase()) return 1
+                    if (a.name.toLowerCase() < b.name.toLowerCase()) return -1
+                    return 0
+                })}}
+            if (action.payload === 'za') {
+                return {...state, filtered: [...state.filtered].sort((a, b) => {
+                    if (a.name.toLowerCase() > b.name.toLowerCase()) return -1
+                    if (a.name.toLowerCase() < b.name.toLowerCase()) return 1
+                    return 0
+                })}}
+            if (action.payload === 'asc') {
+                return {...state, filtered: [...state.filtered].sort((a, b) => b.rating - a.rating)}
+            }
+            if (action.payload === 'desc') {
+                return {...state, filtered: [...state.filtered].sort((a, b) => a.rating - b.rating)}
+            }
+            else {
+                return {...state, filtered: state.backup}
             }
         default:
             return state;

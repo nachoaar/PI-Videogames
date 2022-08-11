@@ -8,7 +8,8 @@ export default function Card (props) {
                 <img src={props.background_image} alt='not found'/>
             </div>
             <h3>{props.name}</h3>
-            <p>{props.genres.join(", ")}</p>          
+            <p>{props.genres.join(", ")}</p>
+            <p>{props.rating}</p>          
         </div>
     )
 }

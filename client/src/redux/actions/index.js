@@ -20,23 +20,30 @@ export const getGenres = () => {
     }
 };
 
-export const filterByGenres = (payload) => {
-    return {
-        type: 'FILTER_GENRES',
-        payload: payload
+export const searchByName = (payload, value) => {
+    console.log(payload);
+    return async (dispatch) => {
+        let data = (await axios.get(`http://localhost:3001/videogames?name=${payload}`)).data;
+        return dispatch({
+            type: 'GET_BY_NAME',
+            payload: data,
+            value: value
+        })
     }
 }
 
-export const filterByCreation = (payload) => {
-    return {
-        type: 'FILTER_CREATED',
-        payload: payload
+export const filterBy = (payload) => {
+    return async (dispatch) => {
+        dispatch({
+            type: 'FILTER_BY',
+            payload: payload
+        })
     }
 }
 
-export const filterByAlphabetic = (payload) => {
+export const orderBy = (payload) => {
     return {
-        type: 'FILTER_ALPHABETIC',
+        type: 'ORDER_BY',
         payload: payload
     }
 }
