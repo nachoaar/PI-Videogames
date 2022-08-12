@@ -20,13 +20,12 @@ export default function rootReducer (state = initialState, action) {
                 ...state,
                 genres: action.payload
             }
+        case 'GET_DETAIL':
+            return {...state, details: action.payload}
         case 'GET_BY_NAME':
-            if (action.value === 'name') {
-                return {...state, backup: action.payload, filtered: action.payload}
-            }
-            else {
-                return {...state, backup: state.videogames, filtered: state.videogames}
-            }
+            return {...state, backup: action.payload, filtered: action.payload}
+        case 'RETURN_ALL':
+            return {...state, backup: state.videogames, filtered: state.videogames}
         case 'FILTER_BY':
             if (action.payload === 'default') {
                 return {...state, filtered: state.backup}

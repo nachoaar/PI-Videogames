@@ -11,7 +11,7 @@ export default function Card (props) {
             <h3>{props.name}</h3>
             <p>{props.genres.join(", ")}</p>
             <p>{props.rating}</p>
-            <Link to='/videogame'>
+            <Link to={`/videogame/${props.id}`}>
                 <p>Ver más.</p>
             </Link>  
         </div>

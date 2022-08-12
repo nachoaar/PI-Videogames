@@ -20,14 +20,30 @@ export const getGenres = () => {
     }
 };
 
-export const searchByName = (payload, value) => {
-    console.log(payload);
+export const getDetail = (payload) => {
+    return async (dispatch) => {
+        let data = (await axios.get(`http://localhost:3001/videogame/${payload}`)).data;
+        return dispatch({
+            type: 'GET_DETAIL',
+            payload: data
+        })
+    }
+}
+
+export const searchByName = (payload) => {
     return async (dispatch) => {
         let data = (await axios.get(`http://localhost:3001/videogames?name=${payload}`)).data;
         return dispatch({
             type: 'GET_BY_NAME',
-            payload: data,
-            value: value
+            payload: data
+        })
+    }
+}
+
+export const returnAll = () => {
+    return async (dispatch) => {
+        dispatch({
+            type: 'RETURN_ALL'
         })
     }
 }

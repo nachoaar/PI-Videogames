@@ -6,7 +6,28 @@ export default function Create () {
     return (
         <div>
             <Nav></Nav>
-            <p>Create</p>
+            <form>
+                <div>
+                    <label>
+                        Nombre: 
+                    </label>
+                    <input type="text" />
+                </div>
+                <div>
+                    <label>
+                        Descripcion:
+                    </label>
+                    <textarea name="" cols="30" rows="10"></textarea>
+                </div>
+                <div>
+                    <label>
+                        Plataformas:
+                    </label>
+                    <select name="" id="">
+                        <option value="a">a</option>
+                    </select>
+                </div>
+            </form>
         </div>
     )
 }

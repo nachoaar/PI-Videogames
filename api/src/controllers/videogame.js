@@ -26,7 +26,7 @@ async function findVideogame (req, res, next) {
             res.send({
                 id: api.id,
                 name: api.name,
-                description: api.description,
+                description: api.description_raw,
                 released: api.released,
                 rating: api.rating,
                 platforms: api.platforms.map((p) => p.platform.name),
