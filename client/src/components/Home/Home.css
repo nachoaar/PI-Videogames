@@ -11,36 +11,16 @@
     gap: 1rem;
 }
 
-.section {
+.iteration {
+    height: 5rem;
+    line-height: 5rem;
     display: grid;
-    grid-template-columns: 15% 1fr;
-}
-
-aside {
-    background-color: #181818;
-}
-
-.sticky {
-    position: sticky;
-    top: 1rem;
-    display: grid;
-    grid-template-rows: repeat(4, 1fr);
-    gap: 1rem;
-}
-
-.gridmain {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
 }
 
 .grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
-}
-
-.lupa {
-    width: 25px;
-    height: 25px;
+    margin: auto;
 }

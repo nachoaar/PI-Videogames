@@ -5,8 +5,11 @@ import './Nav.css'
 export default function Nav () {
     return (
         <nav className='navbar'>
+            <div className='logo'>
+                <h3>Logo</h3>
+            </div>
             <div className='navigation'>
-                    <Link to='/'>
+                    <Link to='/videogames'>
                         <p>Home</p>
                     </Link>
                     <Link to='/videogames/create'>

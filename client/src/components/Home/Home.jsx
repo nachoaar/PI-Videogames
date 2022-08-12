@@ -6,6 +6,7 @@ import { getVideogames, getGenres } from '../../redux/actions';
 import Card from '../Card/Card';
 import Pagination from '../Pagination/Pagination.jsx';
 import Filtered from '../Filtered/Filtered.jsx';
+import Ordered from '../Ordered/Ordered.jsx'
 import './Home.css';
 import SearchBar from '../SearchBar/SearchBar.jsx';
 
@@ -29,48 +30,50 @@ export default function Home () {
     
     return (
         <main className='main'>
-            <section className='section'>
-                <aside>
-                    <div className='sticky'>
-                        <h1>Logo</h1>
-                        <h2>The most wanted</h2>
-                        <SearchBar
-                            setPage={setPage}
-                        />
-                        <Filtered
-                            setPage={setPage}
-                            setOrder={setOrder}
-                            order={order}
-                        />
-                    </div>
-                </aside>
-                <article>
-                    <header>
-                        <Nav/>
-                    </header>
-                    <Pagination
-                        page={page} 
-                        setPage={setPage} 
-                        max={max}
-                    />
-                    <div className='grid'>
-                        {videogames?.slice(
-                            (page - 1) * perPage,
-                            (page - 1) * perPage + perPage
-                        ).map((v) => {
-                            return (
-                                <Card
-                                    key={v.id}
-                                    name={v.name}
-                                    rating={v.rating}
-                                    genres={v.genres}
-                                    background_image={v.background_image}
-                                    id={v.id}
-                                />
-                            )
-                        })}
-                    </div>
-                </article>
+            <header>
+                <Nav/>
+            </header>
+            <section className='iteration'>
+                <Filtered
+                    setPage={setPage}
+                />
+                <SearchBar
+                    setPage={setPage}
+                />
+                <Ordered
+                    setPage={setPage}
+                    setOrder={setOrder}
+                    order={order}
+                />
+            </section>
+            <section>
+                <Pagination
+                    page={page} 
+                    setPage={setPage} 
+                    max={max}
+                />
+                <div className='grid'>
+                    {videogames?.slice(
+                        (page - 1) * perPage,
+                        (page - 1) * perPage + perPage
+                    ).map((v) => {
+                        return (
+                            <Card
+                                key={v.id}
+                                name={v.name}
+                                rating={v.rating}
+                                genres={v.genres}
+                                background_image={v.background_image}
+                                id={v.id}
+                            />
+                        )
+                    })}
+                </div>
+                <Pagination
+                    page={page} 
+                    setPage={setPage} 
+                    max={max}
+                />
             </section>
             <footer>
                 <p>Fin.</p>
