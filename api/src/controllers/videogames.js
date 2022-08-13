@@ -37,11 +37,13 @@ async function getVideogames (req, res, next) {
         // ALL -> GET /videogames
             let url = `https://api.rawg.io/api/games?key=${API_KEY}`;
             let api = [];
+            // let platformas = new Set();
             for (let i = 0; i < 5; i++) {
                 let request = (await axios.get(url)).data;
                 url = request.next;
                 request.results.forEach((v) => {
                     api.push(v);
+                    // v.platforms.forEach((p) => platformas.add(p.platform.name))
                 });
             }
             let videogames = [...database, ...api].flat();
