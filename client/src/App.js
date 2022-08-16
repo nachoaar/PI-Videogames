@@ -6,6 +6,7 @@ import Detail from './components/Detail/Detail.jsx';
 import Create from './components/Create/Create';
 
 function App() {
+
   return (
     <BrowserRouter>
       <div className="App">

@@ -16,6 +16,9 @@ export default function Header({setPage}) {
                     <Link to='/Github'>
                         <p>Github</p>
                     </Link>
+                    <Link to='/videogames/create'>
+                        <p>Create</p>
+                    </Link>
                     <SearchBar
                         setPage={setPage}
                     />
