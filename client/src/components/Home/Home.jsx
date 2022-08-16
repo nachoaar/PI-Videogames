@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import Card from '../Card/Card';
-import Pagination from '../Pagination/Pagination.jsx';
-import Filtered from '../Filtered/Filtered.jsx';
-import Ordered from '../Ordered/Ordered.jsx'
+import Card from './Card/Card.jsx';
+import Pagination from './Pagination/Pagination.jsx';
+import Filtered from './Filtered/Filtered.jsx';
+import Ordered from './Ordered/Ordered.jsx'
 import Header from '../Header/Header.jsx';
 import './Home.css';
 import Loader from '../Loader/Loader.jsx';

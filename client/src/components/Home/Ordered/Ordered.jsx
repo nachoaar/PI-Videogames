@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { orderBy } from '../../redux/actions';
+import { orderBy } from '../../../redux/actions';
 import './Ordered.css';
 
 export default function Filtered ({setPage}) {
