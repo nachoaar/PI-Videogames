@@ -1,17 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { orderBy } from '../../redux/actions';
 import './Ordered.css';
 
-export default function Filtered ({setPage, setOrder}) {
+export default function Filtered ({setPage}) {
 
     const dispatch = useDispatch();
+
+    const [/*order*/, setOrder] = useState('');
 
     function order (e) {
         e.preventDefault();
         dispatch(orderBy(e.target.value));
         setPage(1);
-        setOrder(`Ordenado ${e.target.value}`);
+        setOrder(e.target.value);
     }
 
     return (

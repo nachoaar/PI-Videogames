@@ -1,59 +1,59 @@
-import React, { useState } from 'react';
-import Nav from '../Nav/Nav.jsx';
-import { useSelector, useDispatch } from 'react-redux';
-import { useEffect } from 'react';
-import { getVideogames, getGenres } from '../../redux/actions';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import Card from '../Card/Card';
 import Pagination from '../Pagination/Pagination.jsx';
 import Filtered from '../Filtered/Filtered.jsx';
 import Ordered from '../Ordered/Ordered.jsx'
+import Header from '../Header/Header.jsx';
 import './Home.css';
-import SearchBar from '../SearchBar/SearchBar.jsx';
+import Loader from '../Loader/Loader.jsx';
+import { getGenres, getVideogames } from '../../redux/actions/index.js';
 
 export default function Home () {
-    
+
     const [page, setPage] = useState(1);
     const [perPage] = useState(15);
-    const [order, setOrder] = useState("");
     
     const dispatch = useDispatch();
+    
     useEffect(() => {
         dispatch(getVideogames());
         dispatch(getGenres());
     },[dispatch]);
-
-    console.log(page);
-
-    const videogames = useSelector((state) => state.filtered);
     
-    const max = Math.ceil(videogames.length / perPage);
+    const videogames = useSelector((state) => state.videogames);
+
+    const filtered = useSelector((state) => state.filtered);
+
+    const max = Math.ceil(filtered.length / perPage);
     
     return (
         <main className='main'>
-            <header>
-                <Nav/>
-            </header>
-            <section className='iteration'>
-                <Filtered
+                <Header
                     setPage={setPage}
                 />
-                <SearchBar
-                    setPage={setPage}
-                />
-                <Ordered
-                    setPage={setPage}
-                    setOrder={setOrder}
-                    order={order}
-                />
-            </section>
+            {videogames.length === 0 ? (
+                <Loader/>
+            ) : (
             <section>
+                <article>
+                    <Filtered
+                        setPage={setPage}
+                    />
+                    <Ordered
+                        setPage={setPage}
+                    />
+                </article>
+                <article>
+            {filtered.length > 0 ? (
+            <div>
                 <Pagination
                     page={page} 
                     setPage={setPage} 
                     max={max}
                 />
                 <div className='grid'>
-                    {videogames?.slice(
+                    {filtered?.slice(
                         (page - 1) * perPage,
                         (page - 1) * perPage + perPage
                     ).map((v) => {
@@ -73,8 +73,17 @@ export default function Home () {
                     page={page} 
                     setPage={setPage} 
                     max={max}
-                />
+                    />
+            </div>
+            ) : (
+                <div>
+                    <h3>No hay videojuegos</h3>
+                    <button>Volver</button>
+                </div>
+            )}
+                </article>
             </section>
+                )}
             <footer>
                 <p>Fin.</p>
             </footer>

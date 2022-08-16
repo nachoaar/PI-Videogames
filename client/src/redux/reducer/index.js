@@ -23,9 +23,13 @@ export default function rootReducer (state = initialState, action) {
         case 'GET_DETAIL':
             return {...state, details: action.payload}
         case 'GET_BY_NAME':
-            return {...state, backup: action.payload, filtered: action.payload}
+            return {...state, filtered: action.payload}
+        case 'POST_VIDEOGAME':
+            return {...state}
+        case 'DELETE_CACHE':
+            return {...state, details: {}}
         case 'RETURN_ALL':
-            return {...state, backup: state.videogames, filtered: state.videogames}
+            return {...state, filtered: state.videogames}
         case 'FILTER_BY':
             if (action.payload === 'default') {
                 return {...state, filtered: state.backup}

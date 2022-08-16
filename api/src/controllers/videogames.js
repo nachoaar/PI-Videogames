@@ -18,13 +18,13 @@ async function getVideogames (req, res, next) {
         if (name) {
             let apiQuery = (await axios.get(`https://api.rawg.io/api/games?search=${name}&key=${API_KEY}`)).data.results;
             let dbQuery = database.filter(v => v.name.toLowerCase().includes(name.toLowerCase().replace(/["']/g, "")));
-            let videogames = [...dbQuery, ...apiQuery.splice(0, 15)].flat();
+            let videogames = [...apiQuery.splice(0, 15), ...dbQuery].flat();
             if (videogames.length > 0) {
                 const result = videogames.map((v) => {
                     return {
                         id: v.id,
                         name: v.name,
-                        background_image: v.background_image,
+                        background_image: v.background_image === null ? "https://media.rawg.io/media/games/456/456dea5e1c7e3cd07060c14e96612001.jpg" : v.background_image,
                         rating: v.rating,
                         genres: v.genres.map((g) => g.name)
                     }
@@ -46,12 +46,12 @@ async function getVideogames (req, res, next) {
                     // v.platforms.forEach((p) => platformas.add(p.platform.name))
                 });
             }
-            let videogames = [...database, ...api].flat();
+            let videogames = [...api, ...database].flat();
             const result = videogames.map((v) => {
                 return {
                     id: v.id,
                     name: v.name,
-                    background_image: v.background_image,
+                    background_image: v.background_image === null ? "https://media.rawg.io/media/games/456/456dea5e1c7e3cd07060c14e96612001.jpg" : v.background_image,
                     rating: v.rating,
                     genres: v.genres.map((g) => g.name),
                     createdInDb: v.createdInDb

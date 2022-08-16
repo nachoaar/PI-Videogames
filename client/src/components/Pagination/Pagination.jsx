@@ -9,9 +9,6 @@ export default function Pagination ({page, setPage, max}) {
         numbers.push(i);
     }
 
-    console.log("numero de paginado: ", page);
-    console.log(numbers.length);
-
     const [input, setInput] = useState(1);
 
     const nextPage = () => {

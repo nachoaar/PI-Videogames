@@ -1,12 +1,22 @@
+/* From uiverse.io by @martinval9 */
 .card {
-    width: 15rem;
-    height: 20rem;
-    background-color: #151515;
-    border-radius: 3%;
-    overflow: hidden;
-    box-shadow: 0 2px 10px 0 rgba(59, 59, 59, 0.102);
+    width: 190px;
+    height: 254px;
+    background: rgb(40,40,55);
+    background: linear-gradient(344deg, rgba(40,40,55,1) 0%, rgba(16,16,18,1) 50%);
+    box-shadow: 4px 6px 14px #00000036;
+    border-radius: 3px;
+    color: #F9F9F9;
+    padding: 16px;
+    transition: all .5s;
     margin: auto;
-}
+    overflow: hidden;
+   }
+   
+   .card:hover {
+    margin-top: -30px;
+   }
+   
 
 .image {
     width: 100%;

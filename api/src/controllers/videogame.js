@@ -30,7 +30,7 @@ async function findVideogame (req, res, next) {
                 released: api.released,
                 rating: api.rating,
                 platforms: api.platforms.map((p) => p.platform.name),
-                background_image: api.background_image,
+                background_image:api.background_image,
                 genres: api.genres.map((g) => g.name)
             });
         }
