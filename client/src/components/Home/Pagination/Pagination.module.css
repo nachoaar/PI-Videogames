@@ -1,0 +1,46 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+.pagination ul {
+  display: flex;
+}
+
+.pagination ul li {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 1rem 0 1rem;
+}
+
+.pagination ul li.page {
+  width: 2rem;
+  height: 2rem;
+  font-weight: 500;
+  line-height: 2rem;
+  border-radius: 50%;
+}
+
+.pagination ul li.active {
+  background-color: rgba(0, 7, 29);
+}
+
+.btn {
+  background-color: rgba(0, 7, 29);
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.btn[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

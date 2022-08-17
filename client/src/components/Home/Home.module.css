@@ -1,71 +1,85 @@
-body {
-    padding: 1rem;
-}
-
 .container {
-    height: 92vh;
-    background-color:rgba(0, 7, 29, 0.5);
-    backdrop-filter: blur(10px);
-    display: flex;
-    flex-direction: column;
-    max-width: 1110px;
-    gap: 1rem;
-    padding: 0.8rem;
-    margin: 0 auto;
-    border-radius: 1rem;
+  background-color: rgba(0, 7, 29, 0.5);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  max-width: 90%;
+  gap: 1rem;
+  padding: 1rem 1rem 0 1rem;
+  margin: 0 auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-radius: 2rem;
 }
 
 .navigation {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    max-width: 100%;
-    height: 10%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 100%;
+  height: 7rem;
 }
 
 .logo {
-    font-family: 'Asap', sans-serif;
-    font-weight: 700;
-    font-size: 26px;
-    letter-spacing: 1px;
-    cursor: default;
+  font-family: "Asap", sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  letter-spacing: 1px;
+  cursor: default;
 }
 
 .modification {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 100%;
-    height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  height: 5rem;
 }
 
 .modification .filter_order {
-    display: flex;
-    gap: 5rem;
+  display: flex;
+  gap: 5rem;
 }
 
+.filter_order div {
+  margin: auto;
+}
+
+.filter_order .return {
+    margin: auto;
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: rgba(231, 231, 231, 0.932);
+    transition: 0.5s;
+    cursor: pointer;
+  }
+
+  .filter_order .return:hover {
+    fill: #f73b6e;
+  }
+  
 .paginated {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 10%;
-    max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3rem;
+  max-width: 100%;
 }
 
 .cards {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .footer {
-    margin-top: 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 100%;
+  margin: 2rem 0 2rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2rem;
+  max-width: 100%;
 }
-

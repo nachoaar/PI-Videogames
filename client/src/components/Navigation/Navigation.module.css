@@ -1,59 +1,45 @@
 .navigation {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 200px;
-    gap: 1rem;
-}
-
-.navigation svg {
-    width: 2rem;
-    height: 2rem;
-    fill: rgba(231, 231, 231, 0.932);
-    transition: 0.5s;
-}
-
-.navigation svg:hover {
-    width: 2rem;
-    height: 2rem;
-    fill: #F73B6E;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
 }
 
 /* Button */
 .button {
-    margin: 0;
-    background: transparent;
-    padding: 0;
-    border: none;
+  margin: 0;
+  background: transparent;
+  padding: 0;
+  border: none;
 }
 
 .button {
-    font-family: 'Asap', sans-serif;
-    font-weight: 700;
-    cursor: pointer;
-      --border-right: 4px;
-      --text-stroke-color: white;
-      --animation-color: #F73B6E;
-      --fs-size: 1.5em;
-      letter-spacing: 1px;
-      font-size: 22px;
-      position: relative;
-      color: var(--text-stroke-color);
-  }
-  .hover_text {
-    position: absolute;
-    color: var(--animation-color);
-    width: 0%;
-    inset: 0;
-    border-right: var(--border-right) solid var(--animation-color);
-    overflow: hidden;
-    transition: 0.5s;
-    -webkit-text-stroke: 1px var(--animation-color);
-  }
+  font-family: "Asap", sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+  --border-right: 4px;
+  --text-stroke-color: white;
+  --animation-color: #f73b6e;
+  --fs-size: 1.5em;
+  letter-spacing: 1px;
+  font-size: 22px;
+  position: relative;
+  color: var(--text-stroke-color);
+}
+.hover_text {
+  position: absolute;
+  color: var(--animation-color);
+  width: 0%;
+  inset: 0;
+  border-right: var(--border-right) solid var(--animation-color);
+  overflow: hidden;
+  transition: 0.5s;
+  -webkit-text-stroke: 1px var(--animation-color);
+}
 
-  .button:hover .hover_text {
-    width: 100%;
-    filter: drop-shadow(0 0 20px var(--animation-color))
-  }
+.button:hover .hover_text {
+  width: 100%;
+  filter: drop-shadow(0 0 20px var(--animation-color));
+}
 
 /* Button end */

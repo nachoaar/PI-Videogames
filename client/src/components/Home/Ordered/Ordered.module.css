@@ -1,21 +1,26 @@
 .filter {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  cursor: default;
 }
 
 .select {
-    border: none;
-    background: rgba(0, 7, 29);
-    color: rgba(255, 255, 255, 0.685);
-    padding: 0.5rem 0 0.5rem 0.5rem;
-    border-radius: 1rem;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-    transition: 0.5s;
+  border: none;
+  background: rgba(0, 7, 29);
+  color: rgba(255, 255, 255, 0.685);
+  padding: 0.5rem 0 0.5rem 0.5rem;
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  transition: 0.5s;
+  cursor: pointer;
 }
 
-select:focus {
-    filter: drop-shadow(0 0 5px #F73B6E);
-    outline:none !important;
+.select:hover {
+  background: rgb(0, 4, 15);
+}
+
+.select:focus {
+  outline: none !important;
 }
