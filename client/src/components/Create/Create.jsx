@@ -7,7 +7,7 @@ import { getGenres, postVideogame } from "../../redux/actions";
 import { useEffect } from "react";
 
 const validate = (create) => {
-  let errors = {};
+  let errors = {}; 
   if (!create.name) {
     errors.name = "El videojuego requiere un nombre";
   } else if (create.name.length < 3) {
@@ -106,7 +106,7 @@ export default function Create() {
 
   useEffect(() => {
     dispatch(getGenres());
-  },[dispatch])
+  }, [dispatch]);
 
   const [errors, setErrors] = useState({});
   const [create, setCreate] = useState({
@@ -194,20 +194,20 @@ export default function Create() {
   return (
     <div className={s.container}>
       <header className={s.header}>
-          <div>
-            <span className={s.logo}>GAME.DEV</span>
-          </div>
-          <nav>
-            <Link to="/videogames">
-              <button data-text="Awesome" className={s.button}>
-                <span className={s.actual_text}>&nbsp;RETURN&nbsp;</span>
-                <span className={s.hover_text} aria-hidden="true">
-                  &nbsp;RETURN&nbsp;
-                </span>
-              </button>
-            </Link>
-          </nav>
-        </header>
+        <div>
+          <span className={s.logo}>GAME.DEV</span>
+        </div>
+        <nav>
+          <Link to="/videogames">
+            <button data-text="Awesome" className={s.button}>
+              <span className={s.actual_text}>&nbsp;RETURN&nbsp;</span>
+              <span className={s.hover_text} aria-hidden="true">
+                &nbsp;RETURN&nbsp;
+              </span>
+            </button>
+          </Link>
+        </nav>
+      </header>
       <form className={s.form} onSubmit={(e) => handleSubmit(e)}>
         <div>
           <label>Titulo:</label>
@@ -232,11 +232,18 @@ export default function Create() {
             rows="10"
             required
           />
-          {errors.description && <p className={s.error}>{errors.description}</p>}
+          {errors.description && (
+            <p className={s.error}>{errors.description}</p>
+          )}
         </div>
         <div>
           <label>Géneros:</label>
-          <select className={s.select} onChange={(e) => handleChangeArray(e)} name="genres" required>
+          <select
+            className={s.select}
+            onChange={(e) => handleChangeArray(e)}
+            name="genres"
+            required
+          >
             {genres?.map((g) => {
               return (
                 <option value={g.name} key={g.id}>
@@ -303,7 +310,9 @@ export default function Create() {
             onChange={(e) => handleChange(e)}
             required
           />
-          <label className={s.rating}>Rating <p>{create.rating}</p></label>
+          <label className={s.rating}>
+            Rating <p>{create.rating}</p>
+          </label>
           <input
             type="range"
             name="rating"
@@ -322,7 +331,9 @@ export default function Create() {
             placeholder="Ingresar url de imagen"
             required
           />
-          {errors.background_image && <p className={s.error}>{errors.background_image}</p>}
+          {errors.background_image && (
+            <p className={s.error}>{errors.background_image}</p>
+          )}
         </div>
         <div>
           <button

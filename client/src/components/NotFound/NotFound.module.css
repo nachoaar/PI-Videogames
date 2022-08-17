@@ -37,10 +37,9 @@
   border-radius: 1rem;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   transition: 0.5s;
-  cursor: pointer
+  cursor: pointer;
 }
 
 .submit:hover {
   background: rgb(0, 4, 15);
 }
-

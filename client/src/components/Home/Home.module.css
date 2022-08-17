@@ -47,18 +47,18 @@
 }
 
 .filter_order .return {
-    margin: auto;
-    width: 1.5rem;
-    height: 1.5rem;
-    fill: rgba(231, 231, 231, 0.932);
-    transition: 0.5s;
-    cursor: pointer;
-  }
+  margin: auto;
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: rgba(231, 231, 231, 0.932);
+  transition: 0.5s;
+  cursor: pointer;
+}
 
-  .filter_order .return:hover {
-    fill: #f73b6e;
-  }
-  
+.filter_order .return:hover {
+  fill: #f73b6e;
+}
+
 .paginated {
   display: flex;
   justify-content: center;

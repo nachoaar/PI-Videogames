@@ -13,108 +13,117 @@
 }
 
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 100%;
-    height: 20%;
-    padding: 0 1rem 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100%;
+  height: 20%;
+  padding: 0 1rem 0 1rem;
 }
 
 .main {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 100%;
-    height: 100%;
-    gap: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  height: 70%;
+  gap: 1rem;
 }
 
 .main .left {
-    width: 50%;
-    align-items: center;
+  width: 50%;
+  align-items: center;
 }
 
 .main .left .welcome {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.main .left .welcome .image {
+  width: 50rem;
+  height: 20rem;
+  border-radius: 2rem;
+  background-image: url("../../assets/img/slider/1.jpg");
+  background-position: center;
+  background-size: cover;
 }
 
 .main .left .welcome .h2 {
-    font-size: 4rem;
-    font-family: 'Asap', sans-serif;
-    font-weight: 700;
-    cursor: default;
+  font-size: 4rem;
+  font-family: "Asap", sans-serif;
+  font-weight: 700;
+  cursor: default;
 }
 
 .main .left .welcome .text {
-    font-size: 1rem;
-    max-width: 95%;
-    letter-spacing: 0.5%;
-    line-height: 20px;
-    text-align: center;
-    cursor: default;
+  font-size: 1rem;
+  max-width: 95%;
+  letter-spacing: 0.5%;
+  line-height: 20px;
+  text-align: center;
+  cursor: default;
 }
 
 .main .left .welcome .button {
-    font-size: 40px;
-} 
+  font-size: 40px;
+}
 
 .main .right {
-    width: 50%;
+  width: 50%;
 }
 
 .main .right p {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .logo {
-    font-family: 'Asap', sans-serif;
-    font-weight: 700;
-    font-size: 26px;
-    letter-spacing: 1px;
-    cursor: default;
+  font-family: "Asap", sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  letter-spacing: 1px;
+  cursor: default;
 }
 
 /* Button */
 .button {
-    margin: 0;
-    background: transparent;
-    padding: 0;
-    border: none;
+  margin: 0;
+  background: transparent;
+  padding: 0;
+  border: none;
 }
 
 .button {
-    font-family: 'Asap', sans-serif;
-    font-weight: 700;
-    cursor: pointer;
-      --border-right: 4px;
-      --text-stroke-color: white;
-      --animation-color: #F73B6E;
-      --fs-size: 1.5em;
-      letter-spacing: 1px;
-      font-size: 25px;
-      position: relative;
-      color: var(--text-stroke-color);
-  }
-  .hover_text {
-    position: absolute;
-    color: var(--animation-color);
-    width: 0%;
-    inset: 0;
-    border-right: var(--border-right) solid var(--animation-color);
-    overflow: hidden;
-    transition: 0.5s;
-    -webkit-text-stroke: 1px var(--animation-color);
-  }
+  font-family: "Asap", sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+  --border-right: 4px;
+  --text-stroke-color: white;
+  --animation-color: #f73b6e;
+  --fs-size: 1.5em;
+  letter-spacing: 1px;
+  font-size: 25px;
+  position: relative;
+  color: var(--text-stroke-color);
+}
+.hover_text {
+  position: absolute;
+  color: var(--animation-color);
+  width: 0%;
+  inset: 0;
+  border-right: var(--border-right) solid var(--animation-color);
+  overflow: hidden;
+  transition: 0.5s;
+  -webkit-text-stroke: 1px var(--animation-color);
+}
 
-  .button:hover .hover_text {
-    width: 100%;
-    filter: drop-shadow(0 0 20px var(--animation-color))
-  }
+.button:hover .hover_text {
+  width: 100%;
+  filter: drop-shadow(0 0 20px var(--animation-color));
+}
 
 /* Button end */

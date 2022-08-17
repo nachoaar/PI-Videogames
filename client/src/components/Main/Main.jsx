@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import Slider from '../Slider/Slider';
 import s from "./Main.module.css";
 
 export default function Main() {
@@ -24,6 +23,7 @@ export default function Main() {
       <main className={s.main}>
         <div className={s.left}>
           <div className={s.welcome}>
+            <div className={s.image}></div>
             <h2 className={s.h2}>¡BIENVENIDO!</h2>
             <span className={s.text}>
               Quieres conocer todo sobre tus videojuegos favoritos? hazlo con la
@@ -38,9 +38,6 @@ export default function Main() {
               </button>
             </Link>
           </div>
-        </div>
-        <div className={s.right}>
-          <p>Derecha</p>
         </div>
       </main>
     </div>

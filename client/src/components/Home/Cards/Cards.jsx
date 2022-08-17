@@ -18,7 +18,7 @@ export default function Cards({ page, perPage, setPage }) {
 
   const filtered = useSelector((state) => state.filtered);
 
-  function handleReturn (e) {
+  function handleReturn(e) {
     e.preventDefault();
     dispatch(returnAll());
     setPage(1);
@@ -49,15 +49,13 @@ export default function Cards({ page, perPage, setPage }) {
         <div className={s.not_found}>
           <h3>404</h3>
           <p>Videojuego no encontrado</p>
-            <button className={s.submit} onClick={(e) => handleReturn(e)}>Regresar</button>
+          <button className={s.submit} onClick={(e) => handleReturn(e)}>
+            Regresar
+          </button>
         </div>
       );
     }
   }
 
-  return (
-    <div>
-      {videogames.length > 0 ? cards() : <Loader />}
-    </div>
-  );
+  return <div>{videogames.length > 0 ? cards() : <Loader />}</div>;
 }
