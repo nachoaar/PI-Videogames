@@ -7,7 +7,7 @@ export default function Main () {
 
     return (
         <div className={s.container}>
-            <header>
+            <header className={s.header}>
                 <div>
                     <span className={s.logo}>GAME.DEV</span>
                 </div>
@@ -20,7 +20,7 @@ export default function Main () {
                     </Link>
                 </nav>
             </header>
-            <main>
+            <main className={s.main}>
                 <div className={s.left}>
                     <div className={s.welcome}>
                         <h2 className={s.h2}>¡BIENVENIDO!</h2>
@@ -37,7 +37,7 @@ export default function Main () {
                     <p>Derecha</p>
                 </div>
             </main>
-            <section>
+            <section className={s.example}>
                 <div>
                     <p>Section</p>
                 </div>

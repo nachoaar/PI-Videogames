@@ -1,0 +1,9 @@
+.a {
+    height: 100%;
+}
+
+.card_render {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+}

@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { deleteCache, getDetail } from '../../redux/actions/index.js';
 import Loader from '../Loader/Loader.jsx';
-import Header from '../Header/Header.jsx';
+import Navigation from '../Navigation/Navigation.jsx';
 // import imagen from '../../../../videogame.png';
 
 
@@ -23,7 +23,7 @@ export default function Detail () {
 
     return (
         <div>
-            <Header />
+            <Navigation />
             {Object.keys(detail).length === 0 ? <Loader/> : (
                 <div>
                     <img src={detail.background_image} alt="Imagen de videojuego"/>

@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { postVideogame } from '../../redux/actions';
-import Header from '../Header/Header';
+import Navigation from '../Navigation/Navigation';
 
 const validate = (create) => {
     let errors = {};
@@ -120,7 +120,7 @@ export default function Create () {
 
     return (
         <div>
-            <Header/>
+            <Navigation/>
             <form onSubmit={(e) => handleSubmit(e)}>
                 <div>
                     <label>

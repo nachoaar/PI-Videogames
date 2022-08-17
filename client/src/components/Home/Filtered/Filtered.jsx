@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { filterBy } from '../../../redux/actions';
-import './Filtered.css';
+import s from './Filtered.module.css';
 
 export default function Filtered ({setPage}) {
 
@@ -15,25 +15,25 @@ export default function Filtered ({setPage}) {
     } 
 
     return (
-        <div>
+        <div className={s.filter}>
             <span>
-                Filtrar por:
-                <select onChange={(e) => filter(e)} defaultValue="view">
-                    <option value="view" disabled hidden>Genre</option>
-                    <option value="default">All</option>
-                    {genres?.map((g) => {
-                        return (
-                            <option key={g.id} value={g.name}>{g.name}</option>
-                        )
-                    })}
-                </select>
-                <select onChange={(e) => filter(e)} defaultValue="view">
-                    <option value="view" disabled hidden>Creation</option>
-                    <option value="default">Todos</option>
-                    <option value="database">Database</option>
-                    <option value="api">Api</option>
-                </select>
+                Filtrar
             </span>
+            <select className={s.select} onChange={(e) => filter(e)} defaultValue="view">
+                <option value="view" disabled hidden>Genre</option>
+                <option value="default">All</option>
+                {genres?.map((g) => {
+                    return (
+                        <option key={g.id} value={g.name}>{g.name}</option>
+                    )
+                })}
+            </select>
+            <select className={s.select} onChange={(e) => filter(e)} defaultValue="view">
+                <option value="view" disabled hidden>Creation</option>
+                <option value="default">Todos</option>
+                <option value="database">Database</option>
+                <option value="api">Api</option>
+            </select>
         </div>
     )
 }

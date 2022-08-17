@@ -1,7 +1,7 @@
 /* From uiverse.io by @martinval9 */
 .card {
-    width: 190px;
-    height: 254px;
+    width: 200px;
+    height: 187px;
     background: rgb(40,40,55);
     background: linear-gradient(344deg, rgba(40,40,55,1) 0%, rgba(16,16,18,1) 50%);
     box-shadow: 4px 6px 14px #00000036;
@@ -9,7 +9,6 @@
     color: #F9F9F9;
     padding: 16px;
     transition: all .5s;
-    margin: auto;
     overflow: hidden;
    }
    

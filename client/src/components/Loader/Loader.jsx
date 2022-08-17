@@ -1,10 +1,10 @@
 import React from 'react'
-import './Loader.css';
+import s from './Loader.module.css';
 
 export default function Loader() {
     return (
-<div class="loader">
-    <div class="circle"></div>
-</div>
+        <div className={s.loader}>
+            <p>LOADER</p> 
+        </div>
     )
 }
