@@ -33,7 +33,6 @@ export default function SearchBar({ setPage, setRestart }) {
           <input
             type="search"
             className={s.input}
-            required
             autoComplete="off"
             name="search"
             placeholder="Search your videogame"

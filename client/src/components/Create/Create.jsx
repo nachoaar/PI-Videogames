@@ -218,7 +218,6 @@ export default function Create() {
             name="name"
             onChange={(e) => handleChange(e)}
             value={create.name}
-            required
           />
           {errors.name && <p className={s.error}>{errors.name}</p>}
           <label>Descripcion:</label>
@@ -230,7 +229,6 @@ export default function Create() {
             placeholder="Descripción"
             cols="30"
             rows="10"
-            required
           />
           {errors.description && (
             <p className={s.error}>{errors.description}</p>
@@ -242,7 +240,6 @@ export default function Create() {
             className={s.select}
             onChange={(e) => handleChangeArray(e)}
             name="genres"
-            required
           >
             {genres?.map((g) => {
               return (
@@ -274,7 +271,6 @@ export default function Create() {
             className={s.select}
             onChange={(e) => handleChangeArray(e)}
             name="platforms"
-            required
           >
             {platforms?.map((p, index) => {
               return (
@@ -308,7 +304,6 @@ export default function Create() {
             name="released"
             value={create.released}
             onChange={(e) => handleChange(e)}
-            required
           />
           <label className={s.rating}>
             Rating <p>{create.rating}</p>
@@ -318,8 +313,6 @@ export default function Create() {
             name="rating"
             value={create.rating}
             onChange={(e) => handleChange(e)}
-            min="0"
-            max="5"
           />
           <label>Imagen</label>
           <input
@@ -329,7 +322,6 @@ export default function Create() {
             onChange={(e) => handleChange(e)}
             value={create.background_image}
             placeholder="Ingresar url de imagen"
-            required
           />
           {errors.background_image && (
             <p className={s.error}>{errors.background_image}</p>
