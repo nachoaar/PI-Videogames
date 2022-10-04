@@ -23,8 +23,8 @@ const { createGenres } = require("./src/controllers/genres.js");
 
 // Syncing all the models at once.
 conn.sync({ force: true }).then( async () => {
-  server.listen(3001, () => {
+  server.listen(3001, async () => {
     console.log("%s listening at 3001"); // eslint-disable-line no-console
+    await createGenres();
   });
-  await createGenres();
 })
