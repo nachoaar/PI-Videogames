@@ -21,7 +21,7 @@ async function createGenres() {
       });
     });
   } catch (error) {
-    next(error);
+    console.log(error);
   }
 }
 
