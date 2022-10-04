@@ -18,12 +18,16 @@ export default function SearchBar({ setPage, setRestart }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    dispatch(searchByName(input.search));
-    setRestart(false);
-    setInput({
-      search: "",
-    });
-    setPage(1);
+    if (input.search.length > 0) {
+      dispatch(searchByName(input.search));
+      setRestart(false);
+      setInput({
+        search: "",
+      });
+      setPage(1);
+    } else {
+      alert('Por favor ingrese un videojuego');
+    }
   }
 
   return (

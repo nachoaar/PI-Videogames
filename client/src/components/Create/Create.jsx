@@ -6,8 +6,10 @@ import { Link, useHistory } from "react-router-dom";
 import { getGenres, postVideogame } from "../../redux/actions";
 import { useEffect } from "react";
 
-const validate = (create) => {
-  let errors = {}; 
+const validate = (create, setDisabled) => {
+  let errors = {
+    validate: ''
+  }; 
   if (!create.name) {
     errors.name = "El videojuego requiere un nombre";
   } else if (create.name.length < 3) {
@@ -41,10 +43,14 @@ const validate = (create) => {
   ) {
     errors.background_image = "El videojuego requiere una url valida";
   }
+  if (Object.keys(errors).length < 2) {
+    setDisabled(true)
+  }
   return errors;
 };
 
 export default function Create() {
+
   const platforms = [
     "PC",
     "PlayStation 5",
@@ -108,6 +114,8 @@ export default function Create() {
     dispatch(getGenres());
   }, [dispatch]);
 
+
+  const [disabled, setDisabled] = useState(false);
   const [errors, setErrors] = useState({});
   const [create, setCreate] = useState({
     name: "",
@@ -133,8 +141,9 @@ export default function Create() {
         validate({
           ...create,
           [e.target.name]: e.target.value,
-        })
+        }, setDisabled)
       );
+      
       dispatch(postVideogame(create));
       alert("Videojuego creado con éxito");
       setCreate({
@@ -159,7 +168,7 @@ export default function Create() {
       validate({
         ...create,
         [e.target.name]: e.target.value,
-      })
+      }, setDisabled)
     );
   }
 
@@ -172,7 +181,7 @@ export default function Create() {
       validate({
         ...create,
         [e.target.name]: [...create[e.target.name], e.target.value],
-      })
+      }, setDisabled)
     );
   }
 
@@ -187,7 +196,7 @@ export default function Create() {
       validate({
         ...create,
         [e.target.name]: filterOp,
-      })
+      }, setDisabled)
     );
   }
 
@@ -331,7 +340,7 @@ export default function Create() {
           <button
             className={s.submit}
             type="submit"
-            disabled={Object.keys(errors).length > 0}
+            disabled={disabled === false}
           >
             Crear personaje
           </button>
