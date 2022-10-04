@@ -20,6 +20,7 @@ async function createGenres() {
         },
       });
     });
+    return result;
   } catch (error) {
     console.log(error);
   }
@@ -28,8 +29,9 @@ async function createGenres() {
 async function getGenres(req, res, next) {
   try {
     // ALL -> GET /genres
-    let find = await Genre.findAll();
-    res.status(200).send(find);
+    let rta = await createGenres();
+    // let find = await Genre.findAll();
+    res.status(200).send(rta);
   } catch (error) {
     next(error);
   }
