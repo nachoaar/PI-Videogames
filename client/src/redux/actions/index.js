@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const getVideogames = () => {
   return async (dispatch) => {
-    let data = (await axios.get("https://pi-videogames-six-nu.vercel.app/videogames/")).data;
+    let data = (await axios.get("https://pi-videogames-production-ca96.up.railway.app/videogames/")).data;
     return dispatch({
       type: "GET_VIDEOGAMES",
       payload: data,
@@ -12,7 +12,7 @@ export const getVideogames = () => {
 
 export const getGenres = () => {
   return async (dispatch) => {
-    let data = (await axios.get("https://pi-videogames-six-nu.vercel.app/genres/")).data;
+    let data = (await axios.get("https://pi-videogames-production-ca96.up.railway.app/genres/")).data;
     return dispatch({
       type: "GET_GENRES",
       payload: data,
@@ -23,7 +23,7 @@ export const getGenres = () => {
 export const getDetail = (payload) => {
   return async (dispatch) => {
     try {
-      let data = (await axios.get(`https://pi-videogames-six-nu.vercel.app/videogame/${payload}`))
+      let data = (await axios.get(`https://pi-videogames-production-ca96.up.railway.app/videogame/${payload}`))
         .data;
       return dispatch({
         type: "GET_DETAIL",
@@ -40,7 +40,7 @@ export const searchByName = (payload) => {
   return async (dispatch) => {
     try {
       let data = (
-        await axios.get(`https://pi-videogames-six-nu.vercel.app/videogames?name=${payload}`)
+        await axios.get(`https://pi-videogames-production-ca96.up.railway.app/videogames?name=${payload}`)
       ).data;
       return dispatch({
         type: "GET_BY_NAME",
@@ -56,7 +56,7 @@ export const searchByName = (payload) => {
 export const postVideogame = (payload) => {
   return async (dispatch) => {
     try {
-      let data = await axios.post("https://pi-videogames-six-nu.vercel.app/videogames", payload);
+      let data = await axios.post("https://pi-videogames-production-ca96.up.railway.app/videogames", payload);
       console.log(data);
       return dispatch({
         type: "POST_VIDEOGAME",
